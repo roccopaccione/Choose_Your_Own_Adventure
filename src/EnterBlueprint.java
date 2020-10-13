@@ -10,5 +10,10 @@ public class EnterBlueprint {
 
         System.out.printf("Hello %s, Glad to see you would like to tempt your fate...", userName);
 
+        System.out.println("Please %s, choose your type of hero!\n" +
+                "");
+        int typeHero = scan.nextInt();
+
+
     }
 }
