@@ -20,12 +20,4 @@ public class EnterBlueprint {
                 "5 - Sprinting Freelance");
 
     }
-    public void knightGameplay(){
-        System.out.println("Where would you like to start?\n" +
-                "Mountain Top - A road of fortunes or misfortunes embedded in a towering frozen tundra." +
-                "City Streets - A barren city abandoned of all virtuous beings with surprises around every corner." +
-                "Forest of Futility - A dark magical forest containing menacing beings who's only objective is your demise." +
-                "Highrise - A towering inferno of challenges that can make the sanest person on the planet go mad in minutes" +
-                "Pueblo - Native village with outlaws and virtue seekers looking for your head.");
-    }
 }
