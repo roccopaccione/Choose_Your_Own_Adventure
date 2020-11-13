@@ -13,11 +13,11 @@ public class EnterBlueprint {
 
     public void fighterSelector(){
         System.out.println("Please %s, choose your type of hero!\n" +
-                "1 - Shining Knight\n" +
-                "2 - Shonen Warrior\n" +
-                "3 - Kamikaze\n" +
-                "4 - Battle Warrior\n" +
-                "5 - Sprinting Freelance");
+                "1 - Shining Chararcters.Knight\n" +
+                "2 - Shonen Chararcters.Warrior\n" +
+                "3 - Chararcters.Kamikaze\n" +
+                "4 - Battle Chararcters.Warrior\n" +
+                "5 - Sprinting Chararcters.Freelance");
 
     }
 }
