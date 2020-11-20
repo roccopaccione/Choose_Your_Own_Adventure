@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class AdventureGame {
    JFrame window;
    Container con;
-   JPanel gameTitlePanel;
+   JPanel gameTitlePanel, startBtnPanel, mainPlayPanel;
    JLabel gameTitleLabel;
-   Font titleFont = new Font("Serif", Font.PLAIN, 60);
+   Font titleFont = new Font("Times New Roman", Font.PLAIN, 85);
+   Font beginFont = new Font("Sans-Serif", Font.PLAIN, 40);
+   JButton startButton;
+   JTextArea mainText;
 
     public static void main(String[] args) {
      new AdventureGame();
@@ -24,15 +27,45 @@ public class AdventureGame {
         con = window.getContentPane();
 
         gameTitlePanel = new JPanel();  // Creating a panel for behind title text
-        gameTitlePanel.setBounds(100, 150, 800, 150);
+        gameTitlePanel.setBounds(100, 100, 800, 200);
         gameTitlePanel.setBackground(Color.DARK_GRAY);
-        gameTitleLabel = new JLabel("Labyrinth"); // Setting Title text
+        gameTitleLabel = new JLabel("LABYRINTH"); // Setting Title text
         gameTitleLabel.setForeground(Color.ORANGE);
         gameTitleLabel.setFont(titleFont);
 
-        gameTitlePanel.add(gameTitleLabel);
-        con.add(gameTitlePanel);
+        startBtnPanel = new JPanel(); //  Creating Panel for behind start button
+        startBtnPanel.setBounds(300, 450, 400, 200);
+        startBtnPanel.setBackground(Color.DARK_GRAY);
 
+        startButton = new JButton("Begin");  // Creating Start Button
+        startButton.setBackground(Color.GRAY);
+        startButton.setForeground(Color.ORANGE);
+        startButton.setFont(beginFont);
+
+
+        gameTitlePanel.add(gameTitleLabel);
+        startBtnPanel.add(startButton);
+
+
+        con.add(gameTitlePanel);
+        con.add(startBtnPanel);
+
+    }
+
+    public void createGameplayScreen(){
+
+        mainPlayPanel = new JPanel(); // Creating gameplay panel
+        mainPlayPanel.setBounds(150, 150, 800, 400);
+        mainPlayPanel.setBackground(Color.DARK_GRAY);
+        con.add(mainPlayPanel);
+
+        mainText = new JTextArea(); // Created Textarea for main gameplay window
+        mainText.setBounds(150, 150, 800, 400);
+        mainText.setBackground(Color.DARK_GRAY);
+        mainText.setForeground(Color.WHITE);
+        mainText.setFont(beginFont);
+        mainText.setLineWrap(true);
+        mainPlayPanel.add(mainText);
     }
 
 }
