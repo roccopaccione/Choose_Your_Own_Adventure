@@ -30,7 +30,7 @@ public class BattleWarrior implements Setting {
                         System.out.println("Please pick a valid option.");
                 }
             } while(true);
-        } catch (Exception e){
+        } catch (TypeNotPresentException e){
             System.out.println("Please enter a valid option.");
         }
     return userPickedSetting;
