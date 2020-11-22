@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class AdventureGame {
    JFrame window;
    Container con;
-   JPanel gameTitlePanel, startBtnPanel, mainPlayPanel;
+   JPanel gameTitlePanel, startBtnPanel, mainPlayPanel, gameplayChoiceButtonPanel;
    JLabel gameTitleLabel;
    Font titleFont = new Font("Times New Roman", Font.PLAIN, 85);
-   Font beginFont = new Font("Sans-Serif", Font.PLAIN, 40);
-   JButton startButton;
+   Font buttonFont = new Font("Sans-Serif", Font.PLAIN, 40);
+   JButton startButton, gpChoice1, gpChoice2, gpChoice3, gpChoice4;
    JTextArea mainText;
 
    GameplayScreenHandler gpHandler = new GameplayScreenHandler();
@@ -45,7 +45,7 @@ public class AdventureGame {
         startButton = new JButton("Begin");  // Creating Start Button
         startButton.setBackground(Color.GRAY);
         startButton.setForeground(Color.ORANGE);
-        startButton.setFont(beginFont);
+        startButton.setFont(buttonFont);
         startButton.addActionListener(gpHandler); // Create action listener to call GameplayScreenHandler class
 
 
@@ -71,10 +71,21 @@ public class AdventureGame {
         mainText = new JTextArea(); // Created Textarea for main gameplay window
         mainText.setBounds(150, 150, 800, 400);
         mainText.setBackground(Color.DARK_GRAY);
-        mainText.setForeground(Color.WHITE);
-        mainText.setFont(beginFont);
+        mainText.setForeground(Color.ORANGE);
+        mainText.setFont(titleFont);
         mainText.setLineWrap(true);
         mainPlayPanel.add(mainText);
+
+        gameplayChoiceButtonPanel = new JPanel(); // Create Panel for Gameplay Choices
+        gameplayChoiceButtonPanel.setBounds(150, 150,600,250);
+        gameplayChoiceButtonPanel.setBackground(Color.DARK_GRAY);
+        con.add(gameplayChoiceButtonPanel);
+
+        gpChoice1 = new JButton(); // Create Button for Gameplay Choices
+        gpChoice1.setBackground(Color.DARK_GRAY);
+        gpChoice1.setForeground(Color.WHITE);
+        gpChoice1.setFont(buttonFont);
+        gameplayChoiceButtonPanel.add(gpChoice1);
     }
 
     public class GameplayScreenHandler implements ActionListener{
