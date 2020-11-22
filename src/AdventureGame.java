@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 
 public class AdventureGame {
@@ -11,6 +13,9 @@ public class AdventureGame {
    Font beginFont = new Font("Sans-Serif", Font.PLAIN, 40);
    JButton startButton;
    JTextArea mainText;
+
+   GameplayScreenHandler gpHandler = new GameplayScreenHandler();
+
 
     public static void main(String[] args) {
      new AdventureGame();
@@ -41,6 +46,7 @@ public class AdventureGame {
         startButton.setBackground(Color.GRAY);
         startButton.setForeground(Color.ORANGE);
         startButton.setFont(beginFont);
+        startButton.addActionListener(gpHandler); // Create action listener to call GameplayScreenHandler class
 
 
         gameTitlePanel.add(gameTitleLabel);
@@ -54,6 +60,9 @@ public class AdventureGame {
 
     public void createGameplayScreen(){
 
+        gameTitlePanel.setVisible(false); // Hiding after action listener
+        startBtnPanel.setVisible(false);
+
         mainPlayPanel = new JPanel(); // Creating gameplay panel
         mainPlayPanel.setBounds(150, 150, 800, 400);
         mainPlayPanel.setBackground(Color.DARK_GRAY);
@@ -66,6 +75,14 @@ public class AdventureGame {
         mainText.setFont(beginFont);
         mainText.setLineWrap(true);
         mainPlayPanel.add(mainText);
+    }
+
+    public class GameplayScreenHandler implements ActionListener{
+
+        public void actionPerformed(ActionEvent e){
+
+            createGameplayScreen(); // Calling on Click event
+        }
     }
 
 }
