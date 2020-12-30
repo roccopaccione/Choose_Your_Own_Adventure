@@ -68,7 +68,7 @@ public class AdventureGame {
         mainPlayPanel.setBackground(Color.DARK_GRAY);
         con.add(mainPlayPanel);
 
-        mainText = new JTextArea(); // Created Textarea for main gameplay window
+        mainText = new JTextArea("Choose Your Fighter!"); // Created Textarea for main gameplay window
         mainText.setBounds(150, 150, 800, 400);
         mainText.setBackground(Color.DARK_GRAY);
         mainText.setForeground(Color.ORANGE);
@@ -81,25 +81,25 @@ public class AdventureGame {
         gameplayChoiceButtonPanel.setBackground(Color.DARK_GRAY);
         con.add(gameplayChoiceButtonPanel);
 
-        gpChoice1 = new JButton(); // Create Button for Gameplay Choices
+        gpChoice1 = new JButton("Shonen Warrior"); // Create Button for Gameplay Choices
         gpChoice1.setBackground(Color.DARK_GRAY);
         gpChoice1.setForeground(Color.WHITE);
         gpChoice1.setFont(buttonFont);
         gameplayChoiceButtonPanel.add(gpChoice1);
 
-        gpChoice2 = new JButton();
+        gpChoice2 = new JButton("Sprinting Freelance");
         gpChoice2.setBackground(Color.DARK_GRAY);
         gpChoice2.setForeground(Color.WHITE);
         gpChoice2.setFont(buttonFont);
         gameplayChoiceButtonPanel.add(gpChoice2);
 
-        gpChoice3 = new JButton();
+        gpChoice3 = new JButton("Battle Warrior");
         gpChoice3.setBackground(Color.DARK_GRAY);
         gpChoice3.setForeground(Color.WHITE);
         gpChoice3.setFont(buttonFont);
         gameplayChoiceButtonPanel.add(gpChoice3);
 
-        gpChoice4 = new JButton();
+        gpChoice4 = new JButton("Kamikaze");
         gpChoice4.setBackground(Color.DARK_GRAY);
         gpChoice4.setForeground(Color.WHITE);
         gpChoice4.setFont(buttonFont);
