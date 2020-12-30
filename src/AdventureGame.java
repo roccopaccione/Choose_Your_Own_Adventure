@@ -86,6 +86,12 @@ public class AdventureGame {
         gpChoice1.setForeground(Color.WHITE);
         gpChoice1.setFont(buttonFont);
         gameplayChoiceButtonPanel.add(gpChoice1);
+
+        gpChoice2 = new JButton();
+        gpChoice2.setBackground(Color.DARK_GRAY);
+        gpChoice2.setForeground(Color.WHITE);
+        gpChoice2.setFont(buttonFont);
+        gameplayChoiceButtonPanel.add(gpChoice2);
     }
 
     public class GameplayScreenHandler implements ActionListener{
