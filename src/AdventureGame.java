@@ -77,8 +77,9 @@ public class AdventureGame {
         mainPlayPanel.add(mainText);
 
         gameplayChoiceButtonPanel = new JPanel(); // Create Panel for Gameplay Choices
-        gameplayChoiceButtonPanel.setBounds(175, 300,700,500);
+        gameplayChoiceButtonPanel.setBounds(175, 300,700,300);
         gameplayChoiceButtonPanel.setBackground(Color.DARK_GRAY);
+        gameplayChoiceButtonPanel.setLayout(new GridLayout(4, 1));
         con.add(gameplayChoiceButtonPanel);
 
         gpChoice1 = new JButton("Shonen Warrior"); // Create Button for Gameplay Choices
