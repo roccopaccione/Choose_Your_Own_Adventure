@@ -77,7 +77,7 @@ public class AdventureGame {
         mainPlayPanel.add(mainText);
 
         gameplayChoiceButtonPanel = new JPanel(); // Create Panel for Gameplay Choices
-        gameplayChoiceButtonPanel.setBounds(150, 150,600,250);
+        gameplayChoiceButtonPanel.setBounds(175, 300,700,500);
         gameplayChoiceButtonPanel.setBackground(Color.DARK_GRAY);
         con.add(gameplayChoiceButtonPanel);
 
