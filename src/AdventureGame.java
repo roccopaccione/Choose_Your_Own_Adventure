@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class AdventureGame {
    JFrame window;
    Container con;
-   JPanel gameTitlePanel, startBtnPanel, mainPlayPanel, gameplayChoiceButtonPanel;
+   JPanel gameTitlePanel, startBtnPanel, mainPlayPanel, gameplayChoiceButtonPanel, playerInfoPanel;
    JLabel gameTitleLabel;
    Font titleFont = new Font("Times New Roman", Font.PLAIN, 85);
    Font buttonFont = new Font("Sans-Serif", Font.PLAIN, 40);
@@ -77,8 +77,9 @@ public class AdventureGame {
         mainPlayPanel.add(mainText);
 
         gameplayChoiceButtonPanel = new JPanel(); // Create Panel for Gameplay Choices
-        gameplayChoiceButtonPanel.setBounds(175, 300,700,500);
+        gameplayChoiceButtonPanel.setBounds(175, 300,700,300);
         gameplayChoiceButtonPanel.setBackground(Color.DARK_GRAY);
+        gameplayChoiceButtonPanel.setLayout(new GridLayout(4, 1));
         con.add(gameplayChoiceButtonPanel);
 
         gpChoice1 = new JButton("Shonen Warrior"); // Create Button for Gameplay Choices
@@ -104,6 +105,12 @@ public class AdventureGame {
         gpChoice4.setForeground(Color.WHITE);
         gpChoice4.setFont(buttonFont);
         gameplayChoiceButtonPanel.add(gpChoice4);
+
+        playerInfoPanel = new JPanel();
+        playerInfoPanel.setBounds(100,15,800,50);
+        playerInfoPanel.setBackground(Color.YELLOW);
+        playerInfoPanel.setLayout(new GridLayout(1,4));
+        con.add(playerInfoPanel);
 
     }
 
