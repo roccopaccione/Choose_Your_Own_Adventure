@@ -8,7 +8,7 @@ public class AdventureGame {
    JFrame window;
    Container con;
    JPanel gameTitlePanel, startBtnPanel, mainPlayPanel, gameplayChoiceButtonPanel, playerInfoPanel;
-   JLabel gameTitleLabel;
+   JLabel gameTitleLabel, hitPointLabel;
    Font titleFont = new Font("Times New Roman", Font.PLAIN, 85);
    Font buttonFont = new Font("Sans-Serif", Font.PLAIN, 40);
    JButton startButton, gpChoice1, gpChoice2, gpChoice3, gpChoice4;
@@ -111,6 +111,9 @@ public class AdventureGame {
         playerInfoPanel.setBackground(Color.YELLOW);
         playerInfoPanel.setLayout(new GridLayout(1,4));
         con.add(playerInfoPanel);
+        hitPointLabel = new JLabel("Hp");
+        hitPointLabel.setFont(titleFont);
+
 
     }
 
