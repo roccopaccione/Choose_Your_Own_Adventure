@@ -8,7 +8,7 @@ public class AdventureGame {
    JFrame window;
    Container con;
    JPanel gameTitlePanel, startBtnPanel, mainPlayPanel, gameplayChoiceButtonPanel, playerInfoPanel;
-   JLabel gameTitleLabel, hitPointLabel;
+   JLabel gameTitleLabel, hitPointLabel, healthLabelNumber, characterLabel, characterLabelValue;
    Font titleFont = new Font("Times New Roman", Font.PLAIN, 85);
    Font buttonFont = new Font("Sans-Serif", Font.PLAIN, 40);
    JButton startButton, gpChoice1, gpChoice2, gpChoice3, gpChoice4;
@@ -82,6 +82,7 @@ public class AdventureGame {
         gameplayChoiceButtonPanel.setLayout(new GridLayout(4, 1));
         con.add(gameplayChoiceButtonPanel);
 
+
         gpChoice1 = new JButton("Shonen Warrior"); // Create Button for Gameplay Choices
         gpChoice1.setBackground(Color.DARK_GRAY);
         gpChoice1.setForeground(Color.WHITE);
@@ -106,13 +107,30 @@ public class AdventureGame {
         gpChoice4.setFont(buttonFont);
         gameplayChoiceButtonPanel.add(gpChoice4);
 
+
         playerInfoPanel = new JPanel();
-        playerInfoPanel.setBounds(100,15,800,50);
-        playerInfoPanel.setBackground(Color.YELLOW);
+        playerInfoPanel.setBounds(150,15,800,50);
+        playerInfoPanel.setBackground(Color.DARK_GRAY);
         playerInfoPanel.setLayout(new GridLayout(1,4));
         con.add(playerInfoPanel);
-        hitPointLabel = new JLabel("Hp");
-        hitPointLabel.setFont(titleFont);
+
+        hitPointLabel = new JLabel("Health:");
+        hitPointLabel.setFont(buttonFont);
+        hitPointLabel.setForeground(Color.WHITE);
+        playerInfoPanel.add(hitPointLabel);
+        healthLabelNumber = new JLabel();
+        healthLabelNumber.setFont(buttonFont);
+        healthLabelNumber.setForeground(Color.WHITE);
+        playerInfoPanel.add(healthLabelNumber);
+
+        characterLabel = new JLabel("Character:");
+        characterLabel.setFont(buttonFont);
+        characterLabel.setForeground(Color.WHITE);
+        playerInfoPanel.add(characterLabel);    // Add character label to info panel
+        characterLabelValue = new JLabel();
+        characterLabelValue.setFont(buttonFont);
+        characterLabelValue.setForeground(Color.WHITE);
+        playerInfoPanel.add(characterLabelValue);   // Add character to info panel
 
 
     }
