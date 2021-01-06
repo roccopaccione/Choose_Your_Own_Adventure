@@ -13,6 +13,8 @@ public class AdventureGame {
    Font buttonFont = new Font("Sans-Serif", Font.PLAIN, 40);
    JButton startButton, gpChoice1, gpChoice2, gpChoice3, gpChoice4;
    JTextArea mainText;
+   int health;
+   String character;
 
    GameplayScreenHandler gpHandler = new GameplayScreenHandler();
 
@@ -132,7 +134,15 @@ public class AdventureGame {
         characterLabelValue.setForeground(Color.WHITE);
         playerInfoPanel.add(characterLabelValue);   // Add character to info panel
 
+        playerSetup();
 
+    }
+
+    public void playerSetup() {
+        health = 15;
+        character = "Shonen Warrior";
+        hitPointLabel.setText("" + health);
+        characterLabelValue.setText(character);
     }
 
     public class GameplayScreenHandler implements ActionListener{
