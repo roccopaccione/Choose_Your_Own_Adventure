@@ -117,7 +117,7 @@ public class AdventureGame {
 
 
         playerInfoPanel = new JPanel();
-        playerInfoPanel.setBounds(150,15,800,50);
+        playerInfoPanel.setBounds(150,20,800,50);
         playerInfoPanel.setBackground(Color.DARK_GRAY);
         playerInfoPanel.setLayout(new GridLayout(1,4));
         con.add(playerInfoPanel);
@@ -147,8 +147,18 @@ public class AdventureGame {
     public void playerSetup() {
         health = 15;
         character = "Shonen Warrior";
-        hitPointLabel.setText("" + health);
         characterLabelValue.setText(character);
+        hitPointLabel.setText("" + health);
+
+        playerChoice();
+    }
+    public void playerChoice(){
+        mainText.setText("Choose Your Fighter!");
+
+        gpChoice1.setText("Shonen Warrior");
+        gpChoice2.setText("Sprinting Freelance");
+        gpChoice3.setText("Battle Warrior");
+        gpChoice4.setText("Kamikaze");
     }
 
     public class GameplayScreenHandler implements ActionListener{
