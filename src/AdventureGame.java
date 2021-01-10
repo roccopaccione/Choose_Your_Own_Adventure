@@ -11,8 +11,11 @@ public class AdventureGame {
    JLabel gameTitleLabel, hitPointLabel, healthLabelNumber, characterLabel, characterLabelValue;
    Font titleFont = new Font("Times New Roman", Font.PLAIN, 85);
    Font buttonFont = new Font("Sans-Serif", Font.PLAIN, 40);
+   Font headingFont = new Font("Sans-Serif", Font.PLAIN, 25);
    JButton startButton, gpChoice1, gpChoice2, gpChoice3, gpChoice4;
    JTextArea mainText;
+   int health;
+   String character;
 
    GameplayScreenHandler gpHandler = new GameplayScreenHandler();
 
@@ -47,6 +50,7 @@ public class AdventureGame {
         startButton.setForeground(Color.ORANGE);
         startButton.setFont(buttonFont);
         startButton.addActionListener(gpHandler); // Create action listener to call GameplayScreenHandler class
+        startButton.setFocusPainted(false);
 
 
         gameTitlePanel.add(gameTitleLabel);
@@ -87,24 +91,28 @@ public class AdventureGame {
         gpChoice1.setBackground(Color.DARK_GRAY);
         gpChoice1.setForeground(Color.WHITE);
         gpChoice1.setFont(buttonFont);
+        gpChoice1.setFocusPainted(false);
         gameplayChoiceButtonPanel.add(gpChoice1);
 
         gpChoice2 = new JButton("Sprinting Freelance");
         gpChoice2.setBackground(Color.DARK_GRAY);
         gpChoice2.setForeground(Color.WHITE);
         gpChoice2.setFont(buttonFont);
+        gpChoice2.setFocusPainted(false);
         gameplayChoiceButtonPanel.add(gpChoice2);
 
         gpChoice3 = new JButton("Battle Warrior");
         gpChoice3.setBackground(Color.DARK_GRAY);
         gpChoice3.setForeground(Color.WHITE);
         gpChoice3.setFont(buttonFont);
+        gpChoice3.setFocusPainted(false);
         gameplayChoiceButtonPanel.add(gpChoice3);
 
         gpChoice4 = new JButton("Kamikaze");
         gpChoice4.setBackground(Color.DARK_GRAY);
         gpChoice4.setForeground(Color.WHITE);
         gpChoice4.setFont(buttonFont);
+        gpChoice4.setFocusPainted(false);
         gameplayChoiceButtonPanel.add(gpChoice4);
 
 
@@ -115,24 +123,32 @@ public class AdventureGame {
         con.add(playerInfoPanel);
 
         hitPointLabel = new JLabel("Health:");
-        hitPointLabel.setFont(buttonFont);
+        hitPointLabel.setFont(headingFont);
         hitPointLabel.setForeground(Color.WHITE);
         playerInfoPanel.add(hitPointLabel);
         healthLabelNumber = new JLabel();
-        healthLabelNumber.setFont(buttonFont);
+        healthLabelNumber.setFont(headingFont);
         healthLabelNumber.setForeground(Color.WHITE);
         playerInfoPanel.add(healthLabelNumber);
 
         characterLabel = new JLabel("Character:");
-        characterLabel.setFont(buttonFont);
+        characterLabel.setFont(headingFont);
         characterLabel.setForeground(Color.WHITE);
         playerInfoPanel.add(characterLabel);    // Add character label to info panel
         characterLabelValue = new JLabel();
-        characterLabelValue.setFont(buttonFont);
+        characterLabelValue.setFont(headingFont);
         characterLabelValue.setForeground(Color.WHITE);
         playerInfoPanel.add(characterLabelValue);   // Add character to info panel
 
+        playerSetup();
 
+    }
+
+    public void playerSetup() {
+        health = 15;
+        character = "Shonen Warrior";
+        hitPointLabel.setText("" + health);
+        characterLabelValue.setText(character);
     }
 
     public class GameplayScreenHandler implements ActionListener{
