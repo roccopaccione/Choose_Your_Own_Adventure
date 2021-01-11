@@ -18,6 +18,7 @@ public class AdventureGame {
    String character, placement;
 
    GameplayScreenHandler gpHandler = new GameplayScreenHandler();
+   GameplayChoiceHandler gpChoice = new GameplayChoiceHandler();
 
 
     public static void main(String[] args) {
@@ -92,6 +93,8 @@ public class AdventureGame {
         gpChoice1.setForeground(Color.WHITE);
         gpChoice1.setFont(buttonFont);
         gpChoice1.setFocusPainted(false);
+        gpChoice1.addActionListener(gpChoice);
+        gpChoice1.setActionCommand("case1");
         gameplayChoiceButtonPanel.add(gpChoice1);
 
         gpChoice2 = new JButton("Sprinting Freelance");
@@ -99,6 +102,8 @@ public class AdventureGame {
         gpChoice2.setForeground(Color.WHITE);
         gpChoice2.setFont(buttonFont);
         gpChoice2.setFocusPainted(false);
+        gpChoice2.addActionListener(gpChoice);
+        gpChoice2.setActionCommand("case2");
         gameplayChoiceButtonPanel.add(gpChoice2);
 
         gpChoice3 = new JButton("Battle Warrior");
@@ -106,6 +111,8 @@ public class AdventureGame {
         gpChoice3.setForeground(Color.WHITE);
         gpChoice3.setFont(buttonFont);
         gpChoice3.setFocusPainted(false);
+        gpChoice3.addActionListener(gpChoice);
+        gpChoice3.setActionCommand("case3");
         gameplayChoiceButtonPanel.add(gpChoice3);
 
         gpChoice4 = new JButton("Kamikaze");
@@ -113,6 +120,8 @@ public class AdventureGame {
         gpChoice4.setForeground(Color.WHITE);
         gpChoice4.setFont(buttonFont);
         gpChoice4.setFocusPainted(false);
+        gpChoice4.addActionListener(gpChoice);
+        gpChoice4.setActionCommand("case4");
         gameplayChoiceButtonPanel.add(gpChoice4);
 
 
@@ -177,6 +186,13 @@ public class AdventureGame {
 
             createGameplayScreen(); // Calling on Click event
         }
+    }
+    public class GameplayChoiceHandler implements ActionListener{
+
+        public void actionPerformed(ActionEvent e){
+            String userChoice = e.getActionCommand();
+        }
+
     }
 
 }
