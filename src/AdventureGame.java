@@ -15,7 +15,7 @@ public class AdventureGame {
    JButton startButton, gpChoice1, gpChoice2, gpChoice3, gpChoice4;
    JTextArea mainText;
    int health;
-   String character;
+   String character, placement;
 
    GameplayScreenHandler gpHandler = new GameplayScreenHandler();
 
@@ -153,12 +153,22 @@ public class AdventureGame {
         playerChoice();
     }
     public void playerChoice(){
+        placement = "choice";
         mainText.setText("Choose Your Fighter!");
-
         gpChoice1.setText("Shonen Warrior");
         gpChoice2.setText("Sprinting Freelance");
         gpChoice3.setText("Battle Warrior");
         gpChoice4.setText("Kamikaze");
+    }
+    public void shonenWarrior(){
+        placement = "Shonen Warrior";
+        mainText.setText("You have entered the Labyrinth as the Shonen Warrior\n" +
+                "There is a women holding a mysterious bag\n" +
+                "What will you do?");
+        gpChoice1.setText("Take the bag");
+        gpChoice2.setText("Avoid to the right >");
+        gpChoice3.setText("Avoid to the left <");
+        gpChoice4.setText("Tell her to get away from you");
     }
 
     public class GameplayScreenHandler implements ActionListener{
